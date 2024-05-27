@@ -1,10 +1,10 @@
-import book from '../models/category.model.js';
+import category from '../models/category.model.js';
 
-const getAllbooks = async ()=>{
+const getAllCategories = async ()=>{
     try {
-        const books = await book.find()
-        if(books)
-            return books
+        const category = await category.find()
+        if(category)
+            return category
         else
             return false
     } catch (err) {
@@ -12,7 +12,7 @@ const getAllbooks = async ()=>{
     }
 }
 
-const createBook = async (name, pages, price, author) =>{
+const createCategories = async (name, description) =>{
     try {
         
     } catch (err) {
@@ -20,5 +20,5 @@ const createBook = async (name, pages, price, author) =>{
     }
 }
 export default {
-    getAllbooks
+    getAllCategories
 }
