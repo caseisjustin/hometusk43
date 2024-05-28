@@ -16,8 +16,13 @@ const getAllusers = async () => {
 }
 
 const getUserByEmail = async (email) => {
-    const userresult = await user.find({email: email})
-    return userresult
+    const userresult = await user.find({email})
+    if(userresult){
+        return userresult
+    }
+    else{
+        return false
+    }
 }
 const addUser = async (email, password, role) => {
     const response =  await user({email, password, role})
@@ -34,9 +39,13 @@ const updateUser = async (email, password, role) => {
     return response
 }
 
+const deleteUser = async (email) => {
+    await user.findOneAndDelete({email})
+}
 export default {
     getAllusers,
     addUser,
     getUserByEmail,
-    updateUser
+    updateUser,
+    deleteUser
 }

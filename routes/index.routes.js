@@ -4,7 +4,7 @@ import categoryRouter from "./category.routes.js"
 
 const router = Router()
 router.use("/superadmin/users", usersRouter)
-router.use("/category", categoryRouter)
+router.use("/admin/category", categoryRouter)
 
 
 export default router;
